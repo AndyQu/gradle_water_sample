@@ -1,0 +1,25 @@
+allprojects{
+    task hello<<{
+        task->println "${task.project.name}"
+    }
+}
+subprojects{
+    hello{
+        doLast{
+            println "--I depend on water."
+        }
+        afterEvaluate{
+            project->
+                if(project.arctic) 
+                    doLast{
+                        println '--I love to spend time in the arctic waters.'
+                    }
+        
+        }
+    }
+}
+'''
+configure(subprojects.findAll{it.name!='tropicalFish'}){
+    hello << {println '--I love to spend time in the arctic waters.'}
+}
+'''

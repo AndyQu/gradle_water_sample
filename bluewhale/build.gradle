@@ -1,0 +1,7 @@
+ext.arctic=true
+hello.doLast{
+    println "--I am the largest animal that has ever lived on this planet."
+}
+task distanceToIceberg<<{
+    println "20 nautical miles"
+}

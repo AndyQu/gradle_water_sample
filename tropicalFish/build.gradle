@@ -1,0 +1,4 @@
+ext.arctic=false
+task distanceToIceberg<<{
+    println "10 nautical miles"
+}
